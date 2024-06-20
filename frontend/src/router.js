@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './views/HomePage.vue';
 import AboutPage from './views/AboutPage.vue';
-import CourseMaterials from './views/CourseMaterials.vue';
+import CourseMaterials from './views/CourseMaterialsPage.vue';
 import AssessmentPage from './views/AssessmentPage.vue';
 import ContactUs from './views/ContactUs.vue';
 import RegisterForm from './views/RegisterForm.vue';

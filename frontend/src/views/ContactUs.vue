@@ -40,15 +40,21 @@
     },
     methods: {
       submitForm() {
-        alert(`Thank you, ${this.form.name}. Your message has been sent!`);
-        // Add form submission logic here (e.g., send the form data to a server)
-        this.form = {
-          name: "",
-          email: "",
-          subject: "",
-          message: ""
-        };
-      }
+      axios.post('http://localhost:80/contactus.php?action=submitForm', this.form)
+        .then(response => {
+          alert(response.data.message);
+          this.resetForm();
+        })
+        .catch(error => {
+          alert('Error submitting form: ' + error.response.data.error);
+        });
+    },
+    resetForm() {
+      this.form.name = '';
+      this.form.email = '';
+      this.form.subject = '';
+      this.form.message = '';
+    }
     }
   };
   </script>
